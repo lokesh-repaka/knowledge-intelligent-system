@@ -9,8 +9,9 @@ from app.services.storage_service import S3Storage
 from app.services.llm_service import LLMService
 from app.config import Config
 import os 
-from langchain.document_loaders import TextLoader, PyPDFLoader 
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_community.document_loaders import TextLoader, PyPDFLoader
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from pydantic import BaseModel, ValidationError 
 import tempfile
 import logging
 from flask import Flask, request, render_template, jsonify

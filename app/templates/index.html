@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Intelligent System | AI RAG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-brain-circuit"></i>
+                    <span>K.I.S</span>
+                </div>
+            </div>
+
+            <div class="upload-section">
+                <h3>Knowledge Base</h3>
+                <p>Upload documents to enhance AI knowledge</p>
+                <div class="upload-zone" id="uploadZone">
+                    <input type="file" id="fileInput" hidden accept=".pdf,.txt">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Click or Drag Documents</p>
+                </div>
+                <div id="uploadProgress" class="progress-container hidden">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <span id="progressText">Uploading...</span>
+                </div>
+                <div id="uploadStatus" class="status-message"></div>
+            </div>
+
+            <div class="document-list">
+                <h3>Uploaded Files</h3>
+                <ul id="fileList">
+                    <!-- Files will be listed here -->
+                    <li class="empty-state">No files uploaded yet</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="status-indicator">
+                    <span class="dot online"></span>
+                    <span>System Online</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-area">
+            <header class="chat-header">
+                <div class="header-info">
+                    <h1>Intelligent Assistant</h1>
+                    <p>Powered by Llama 3.1 & RAG</p>
+                </div>
+                <div class="header-actions">
+                    <button id="clearChat" title="Clear Chat"><i class="fas fa-trash-alt"></i></button>
+                </div>
+            </header>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="message assistant">
+                    <div class="avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="content">
+                        Hello! I am your Knowledge Intelligent Assistant. Upload documents on the left, and I can answer
+                        questions based on their content. How can I help you today?
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <form id="queryForm" class="query-form">
+                    <input type="text" id="userInput" placeholder="Ask anything about your documents..." required
+                        autocomplete="off">
+                    <button type="submit" id="sendBtn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>

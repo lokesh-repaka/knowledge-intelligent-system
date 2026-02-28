@@ -4,7 +4,8 @@ A sophisticated full-stack AI-powered web application that enables users to uplo
 
 ## System Architecture
 
-![Knowledge Intelligence System Architecture](./architecture.png)
+<img width="1376" height="768" alt="architecture 2" src="https://github.com/user-attachments/assets/0ac8d62e-05d3-47d6-863c-aed34d04674f" />
+
 
 The system implements a complete RAG pipeline with document ingestion, vector embeddings, semantic search, and LLM-powered responses.
 
